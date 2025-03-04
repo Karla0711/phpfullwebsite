@@ -1,18 +1,22 @@
-<?php 
-$host="localhost";
-$db="dblucero";
-$uname="handrix";
-$pw="lucero";
-$dsn="mysql:host={$host};dbname={$db}";
-try {
-    $con = new PDO($dsn,$uname,$pw);
-    if($con){
-       // echo "Connected to Database!!!";
+<?php
+    $host = "localhost";
+    $database = "dbalaban";
+    $user = "root";
+    $password = "";
+    $dsn = "mysql:host={$host};dbname={$database};";
+
+    echo $dsn;
+
+    try 
+    {
+        $con = new PDO($dsn, $user, $password);
+        if ($con)
+        {
+            echo "Successfully connected to database.";
+        }
     }
-} catch (PDOException $e) {
-    echo "Error : ".$e->getMessage();
-}
-
-    
-
+    catch (PDOException $th) 
+    {
+        echo $th->getMessage();
+    }
 ?>
